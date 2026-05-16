@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>初中数学练习课堂</title>
+  <link rel="stylesheet" href="src/styles.css">
+</head>
+<body>
+  <header class="hero">
+    <nav>
+      <span class="brand">Math Class</span>
+      <a href="#practice">学生练习</a>
+      <a href="#teacher">教师端</a>
+    </nav>
+    <div class="hero-content">
+      <p class="eyebrow">初中数学 · 方程与不等式</p>
+      <h1>让学生反复练，老师实时看见每个人的掌握情况</h1>
+      <p>覆盖一元一次方程、二元一次方程组、一元一次不等式。所有练习记录会保存在本机浏览器，适合课堂投屏、小组练习或课后巩固。</p>
+    </div>
+  </header>
+
+  <main>
+    <section id="practice" class="panel practice-layout">
+      <aside class="sidebar">
+        <h2>学生信息</h2>
+        <label>选择学生
+          <select id="studentSelect"></select>
+        </label>
+        <div class="add-student">
+          <label>新增学生
+            <input id="studentName" type="text" placeholder="输入姓名，如：王小明">
+          </label>
+          <button id="addStudent" class="secondary" type="button">添加</button>
+        </div>
+        <div id="studentStats" class="student-stats"></div>
+      </aside>
+
+      <section class="practice-main">
+        <div class="section-heading">
+          <p class="eyebrow">学生端</p>
+          <h2>选择题型后开始练习</h2>
+        </div>
+        <div id="topicTabs" class="topic-tabs" aria-label="练习题型"></div>
+        <article id="questionCard" class="question-card">
+          <div class="question-meta">
+            <span class="question-topic"></span>
+            <button id="nextQuestion" class="ghost" type="button">换一题</button>
+          </div>
+          <p class="question-text"></p>
+          <p class="question-hint"></p>
+          <form id="answerForm" class="answer-form"></form>
+          <div id="feedback" class="feedback" aria-live="polite"></div>
+        </article>
+      </section>
+    </section>
+
+    <section id="teacher" class="panel teacher-panel">
+      <div class="section-heading row-heading">
+        <div>
+          <p class="eyebrow">教师端</p>
+          <h2>班级练习情况看板</h2>
+          <p>按学生展示总正确率、分题型完成情况和最近提交记录，便于老师快速发现薄弱点。</p>
+        </div>
+        <div class="toolbar">
+          <button id="exportData" class="secondary" type="button">导出数据</button>
+          <button id="resetData" class="danger" type="button">清空数据</button>
+        </div>
+      </div>
+      <p id="emptyTeacherState" class="empty-state">还没有学生数据。请先在学生端添加学生并提交练习。</p>
+      <div id="teacherDashboard" class="teacher-dashboard"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>提示：本应用无需后端，数据存储在当前浏览器 localStorage 中；如需换电脑查看，请先导出 JSON 数据。</p>
+  </footer>
+
+  <script type="module" src="src/app.js"></script>
+</body>
+</html>

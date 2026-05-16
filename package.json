@@ -1,0 +1,16 @@
+{
+  "name": "math-practice-classroom",
+  "version": "1.0.0",
+  "description": "初中数学方程与不等式练习应用，含学生端与教师端数据看板。",
+  "type": "module",
+  "scripts": {
+    "test": "node tests/generators.test.js",
+    "start": "python3 -m http.server 4173"
+  },
+  "keywords": [
+    "math",
+    "education",
+    "practice"
+  ],
+  "license": "MIT"
+}
